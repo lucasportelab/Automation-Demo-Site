@@ -50,6 +50,13 @@ Confirma a senha
     ${senha}            FakerLibrary.Password
     Scroll Element Into View    ${confirm_password}
     Input Password    ${confirm_password}    ${senha}
+Insere imagem no cadastro
+    ${caminho_foto}    Set Variable    ${EXECDIR}/img/07.png
+    Log To Console    ${caminho_foto}
+    Choose File    ${escolher_arquivo}    ${caminho_foto}
+    Sleep    2s
+Remove a obrigatoriedade do campo country
+    Execute Javascript    document.getElementById('countries').removeAttribute('required')
 Confirma e finaliza o cadastro
     ${elemento}=    Get WebElement    id=submitbtn
     Execute Javascript    arguments[0].click();    ARGUMENTS    ${elemento}

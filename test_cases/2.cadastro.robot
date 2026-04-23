@@ -16,4 +16,8 @@ Registro
     Preenche a data de nascimento
     Preenche a senha
     Confirma a senha
+    Insere imagem no cadastro
+    #COM ISSO O TESTE ESTÁ FINALIZADO, MAS VAMOS REMOVER A VALIDAÇÃO DO CAMPO COUNTRY UTILIZANDO JAVASCRIPT PARA DE FATO FINALIZAR O CADASTRO
+    Remove a obrigatoriedade do campo country
     Confirma e finaliza o cadastro
+
