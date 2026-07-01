@@ -1,8 +1,15 @@
 # Automação de Testes com Robot Framework 🤖
-Este projeto é uma automação de testes E2E desenvolvido para demonstrar competências em Robot Framework, SeleniumLibrary e geração de dados sintéticos com FakerLibrary.
+Este projeto é uma automação de testes E2E desenvolvido para demonstrar competências e simular cenários reais encontrados no dia a dia de um QA. Desenvolvido utilizando Robot Framework, SeleniumLibrary e FakerLibrary.
 
-# O que é esperado com o teste
+# Objetivo
 A ideia é cobrir todo o cadastro de usuário no site seguindo o fluxo que um usuário normalmente seguiria. O resultado esperado já encontrado em testes manuais é uma falha no cadastro, dado ao campo "Country" que é obrigatório, porém não exibe opções na lista e acaba barrando o cadastro do usuário.
+
+## Cenários Validados
+
+- Cadastro de usuário utilizando dados dinâmicos;
+- Validação de campos obrigatórios;
+- Validação do fluxo E2E;
+- Geração automática de evidências e relatórios.
 
 ## Tecnologias Utilizadas
 - **Linguagem:** Python
@@ -37,12 +44,22 @@ robot -d ./results test_cases/
 ```
 
 ## Estrutura do Projeto
-- `resources/`: Keywords personalizadas e configurações de setup/teardown.
+O projeto foi estruturado visando reutilização, manutenção e escalabilidade da automatização.
+
+- `resources/`: Centralização de keywords personalizadas e configurações.
 - `suits/`: Scripts de automação.
-- `test_cases/`: Casos de teste organizados por tela.
+- `test_cases/`: Casos de teste organizados por funcionalidade.
 - `results/`: Relatórios e logs gerados após a execução (ignorado no Git).
 - `requirements.txt`: Lista de dependências do projeto.
 
+## Defeito Encontrado
+Durante a execução dos testes foi identificado um defeito funcional no fluxo de cadastro
+
+- O campo "Country" é obrigatório;
+- O componente não retorna opções válidas;
+- O fluxo do cadastro é interrompido;
+- O defeito impossibilita a conclusão do cenário.
+
 ## Observações
-- Foi necessário realizar a injeção de JavaScript no teste case 2, a fim de remover a obrigatoriedade do campo "country" (que está travando o fluxo do site)
-- A ação de "burlar" o cadastro no site foi realizada apenas para fins educacionais e voltado 100% à estudos.
+- Foi necessário realizar a injeção de JavaScript no test case 2, a fim de remover a obrigatoriedade do campo "country" (que está travando o fluxo do site)
+- A ação de remover a obrigatoriedade do campo "country" do cadastro no site foi realizada apenas para fins educacionais e voltado 100% à estudos.
